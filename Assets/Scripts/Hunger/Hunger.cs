@@ -46,6 +46,11 @@ public class Hunger : MonoBehaviour
     {
         return currentHunger;
     }
+    
+    public float GetMaxHunger()
+    {
+        return maxHunger;
+    }
 
     private void Starved()
     {

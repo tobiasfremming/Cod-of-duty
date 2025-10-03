@@ -11,7 +11,7 @@ public class HungerUI : MonoBehaviour
 
     private void Start()
     {
-        slider.maxValue = 100f;
+        slider.maxValue = hunger.GetMaxHunger();
     }
     
     private void Update()
@@ -19,9 +19,9 @@ public class HungerUI : MonoBehaviour
         SetHunger(hunger.GetHunger());
     }
 
-    public void SetHunger(float hunger)
+    public void SetHunger(float newHunger)
     {
-        slider.value = hunger;
+        slider.value = newHunger;
     }
     
     public void SetHungerMax(float hungerMax)
