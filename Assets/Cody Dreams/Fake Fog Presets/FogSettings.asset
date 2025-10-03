@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21154da096f8bd4dad8bf375473286d, type: 3}
+  m_Name: FogSettings
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SSFogSettings
+  materials:
+  - {fileID: 2100000, guid: b34a69d3a8f84e84ea04183aa4f0ac9b, type: 2}
+  - {fileID: 2100000, guid: c83360b083289d24a87e550a968a8364, type: 2}
+  fogDatas:
+  - FogDatas:
+    - {fileID: 11400000, guid: 3213eabe66251ab48833174c1005536e, type: 2}
+    - {fileID: 11400000, guid: 6aaa50406ec27e347b44ecc8d1de1158, type: 2}
+  - FogDatas:
+    - {fileID: 11400000, guid: d4dbc4f18cba4d549a91f0dedfa89563, type: 2}
+    - {fileID: 11400000, guid: 8b066e1db0fa74942b4da7d5c6335675, type: 2}
+  - FogDatas:
+    - {fileID: 11400000, guid: e663a31f6c13f4b43819bd09c02ded5d, type: 2}
+    - {fileID: 11400000, guid: 3f4d2e7a548f72a49ac9e9cc6023c185, type: 2}
+  - FogDatas:
+    - {fileID: 11400000, guid: 59f55906a73fefa46ac68b569616b898, type: 2}
+    - {fileID: 11400000, guid: 8da966d65508be946abd05a1f7627f07, type: 2}
+  selectedFogIndex: 3

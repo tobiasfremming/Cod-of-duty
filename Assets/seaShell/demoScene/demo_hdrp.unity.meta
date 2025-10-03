@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6c78e8d6c3cb998409223b801b95249e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208785
+  packageName: 3D Seashell
+  packageVersion: 1.0
+  assetPath: Assets/seaShell/demoScene/demo_hdrp.unity
+  uploadId: 476859

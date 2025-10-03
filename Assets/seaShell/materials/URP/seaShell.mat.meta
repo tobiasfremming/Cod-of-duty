@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1de39bcc4d71d204f9f1002f25953617
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208785
+  packageName: 3D Seashell
+  packageVersion: 1.0
+  assetPath: Assets/seaShell/materials/URP/seaShell.mat
+  uploadId: 476859

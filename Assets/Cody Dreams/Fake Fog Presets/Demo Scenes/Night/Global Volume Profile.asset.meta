@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5cd8c71e496fcf144bc7da853d8a2781
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327058
+  packageName: Fog Presets (Fake Fog)
+  packageVersion: 1.0
+  assetPath: Assets/Cody Dreams/Fake Fog Presets/Demo Scenes/Night/Global Volume
+    Profile.asset
+  uploadId: 774725

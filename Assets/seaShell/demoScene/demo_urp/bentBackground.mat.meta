@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 90bc1807aa2b54a4091cf5b659b390e4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208785
+  packageName: 3D Seashell
+  packageVersion: 1.0
+  assetPath: Assets/seaShell/demoScene/demo_urp/bentBackground.mat
+  uploadId: 476859

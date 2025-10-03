@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c55827d33007c284ba97c2ac08f92f31
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208785
+  packageName: 3D Seashell
+  packageVersion: 1.0
+  assetPath: Assets/seaShell/demoScene/demo_URP.unity
+  uploadId: 476859
