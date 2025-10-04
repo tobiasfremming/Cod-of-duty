@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 
@@ -31,6 +32,7 @@ public class Hunger : MonoBehaviour
 
     public void IncreaseHunger(float amount)
     {
+        amount = Mathf.Clamp(amount, 0, maxHunger - currentHunger);
         currentHunger += amount;
     }
 
