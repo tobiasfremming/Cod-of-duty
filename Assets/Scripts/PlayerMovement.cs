@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Mouse position in screen space with depth
         Vector3 screenPoint = Input.mousePosition;
-        screenPoint.z = transform.localScale.x*2 + 30;
+        float distanceFromCamera = Vector3.Distance(Camera.main.transform.position, transform.position);
+        screenPoint.z = (distanceFromCamera+30)*3;
 
         // Convert to world space
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(screenPoint);
@@ -75,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         // Increase or decrease velocity forward based on input
         if (moveForward)
         {
+            transform.localScale += Vector3.forward * Time.deltaTime;
             if (currentForwardVelocity < maxForwardVelocity)
             {
                 currentForwardVelocity += (maxForwardVelocity / timeToReachMaxVelocity) * Time.deltaTime;

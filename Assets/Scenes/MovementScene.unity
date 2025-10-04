@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600d8c6eb99c68145808fc241f66dbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 2098220200}
+  playerTransform: {fileID: 2098220206}
   smoothTime: 0.3
   positionOffset: {x: 0, y: 2, z: -5}
   rotationOffset: {x: 0, y: 0, z: 0}
@@ -502,9 +502,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2098220200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 813669654068656545, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
+--- !u!4 &2098220206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
   m_PrefabInstance: {fileID: 2264456973415793402}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2264456973415793402
