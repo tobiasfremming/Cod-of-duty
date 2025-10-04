@@ -14,6 +14,8 @@ public class PlayerFollower : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!playerTransform) return;
+     
         Vector3 targetEuler = playerTransform.rotation.eulerAngles;
 
         // Rotate camera in same direction as playerObject

@@ -7,12 +7,21 @@ public class Fish : EatableEntity, IEater
 	[SerializeField] private float growthRate = 0.1f;
 	[SerializeField] private float eatSizeThreshold = 1.5f;
  	[SerializeField] private Collider eatCollider;
+    
+    [SerializeField] private float scaleLerpSpeed = 5f;
+    private Vector3 targetScale;
 
     private Hunger hunger;
 
     private void Start()
     {
+	    targetScale = transform.localScale;
 	    hunger = GetComponent<Hunger>();
+    }
+
+    private void Update()
+    {
+	    transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleLerpSpeed * Time.deltaTime);
     }
 
     public override bool CanBeEatenBy(IEater eater)
@@ -30,7 +39,7 @@ public class Fish : EatableEntity, IEater
         if (!CanEat(target)) return;
 		
         size += (target.NutritionValue * growthRate);
-        transform.localScale = Vector3.one * size;
+        targetScale = Vector3.one * size;
 		Debug.Log($"Fish grew to size: {size}");
         target.OnEaten(this);
         
