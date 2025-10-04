@@ -25,8 +25,8 @@ public class PlayerFollower : MonoBehaviour
 
         // Move camera behind playerObject
         Vector3 targetPosition = playerTransform.position;
-        targetPosition += playerTransform.rotation * (positionOffset * playerTransform.localScale.z/2);
-        targetPosition += playerTransform.rotation * (positionOffset * playerTransform.localScale.y/4);
+        targetPosition += playerTransform.rotation * (positionOffset * playerTransform.localScale.z/2); // Required some tweaking with /2 to get a good feel
+        targetPosition += playerTransform.rotation * (positionOffset * playerTransform.localScale.y/4); // Rquired some tweaking with /4 to get a good feel
 
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime);
     }

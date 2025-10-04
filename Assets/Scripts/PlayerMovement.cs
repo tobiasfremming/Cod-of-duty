@@ -22,11 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveForwardAction = InputSystem.actions.FindAction("MoveForward");
     }
-    
-    void Update()
-    {
-        
-    }
+
     float NormalizeAngle(float angle)
     {
         if (angle > 180f) angle -= 360f;
