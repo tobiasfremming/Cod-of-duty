@@ -22,11 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveForwardAction = InputSystem.actions.FindAction("MoveForward");
     }
-    
-    void Update()
-    {
-        
-    }
+
     float NormalizeAngle(float angle)
     {
         if (angle > 180f) angle -= 360f;
@@ -38,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Mouse position in screen space with depth
         Vector3 screenPoint = Input.mousePosition;
-        screenPoint.z = transform.localScale.x*2 + 30;
+        float distanceFromCamera = Vector3.Distance(Camera.main.transform.position, transform.position);
+        screenPoint.z = (distanceFromCamera+30)*3;
 
         // Convert to world space
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(screenPoint);

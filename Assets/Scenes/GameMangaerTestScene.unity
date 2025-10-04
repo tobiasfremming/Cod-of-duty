@@ -613,6 +613,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 621295265}
   hunger: {fileID: 20537077}
+--- !u!4 &803529123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
+  m_PrefabInstance: {fileID: 803529113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &813516116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600d8c6eb99c68145808fc241f66dbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 20537074}
+  playerTransform: {fileID: 803529123}
   smoothTime: 0.3
   positionOffset: {x: 0, y: 2, z: -5}
   rotationOffset: {x: 0, y: 0, z: 0}
@@ -2096,11 +2101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3996619339772815999, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}
-    - {fileID: 6374381379064467893, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}
-    - {fileID: 7901005694512043871, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}
-    - {fileID: 896315382925178025, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}
+    m_RemovedComponents: [{fileID: 3996619339772815999, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3},
+      {fileID: 6374381379064467893, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3},
+      {fileID: 7901005694512043871, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3},
+      {fileID: 896315382925178025, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}]
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
