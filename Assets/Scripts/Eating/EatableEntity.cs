@@ -13,4 +13,9 @@ public abstract class EatableEntity : MonoBehaviour, IEatable
     {
         Destroy(gameObject);
     }
+    
+    public void SetSize(float newSize)
+    {
+        size = newSize;
+    }
 }
