@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Boid : MonoBehaviour
 {
     [Header("Movement")]
     public float maxSpeed = 5f;
-    public float maxForce = 0.5f;
+    public float maxForce = 0.3f;
+    public float maxPitch = 0.3f;
     
     [Header("Perception Radii")]
     public float alignmentRadius = 30f;
@@ -16,14 +18,20 @@ public class Boid : MonoBehaviour
     [Range(0f, 5f)] public float cohesionWeight = 1.0f;
     [Range(0f, 5f)] public float separationWeight = 1.5f;
     
+    [SerializeField] public float size = 1f;
+    [SerializeField] private float sizeThreshold = 0.5f;
+    [SerializeField] private float fleeWeight = 2f;
+    [SerializeField] private float sameSizeCohesionWeight = 1f;
+    [SerializeField] private float huntWeight = 1.5f;
+    
     private BoidManager manager;
     private Vector3 velocity;
     private Vector3 acceleration;
     
     // Cached neighbors for each behavior
-    private System.Collections.Generic.List<Boid> alignmentNeighbors;
-    private System.Collections.Generic.List<Boid> cohesionNeighbors;
-    private System.Collections.Generic.List<Boid> separationNeighbors;
+    private List<Boid> alignmentNeighbors;
+    private List<Boid> cohesionNeighbors;
+    private List<Boid> separationNeighbors;
     
     // Public properties
     public Vector3 Position => transform.position;
@@ -50,6 +58,7 @@ public class Boid : MonoBehaviour
 
     void Update()
     {
+        size = this.
         // Fetch all neighbors in a single loop
         if (manager != null)
         {
@@ -57,10 +66,60 @@ public class Boid : MonoBehaviour
                 out alignmentNeighbors, out cohesionNeighbors, out separationNeighbors);
             
             // Debug: Print neighbor counts (comment out after debugging)
-            if (Time.frameCount % 60 == 0) // Only print once per second
+            /*if (Time.frameCount % 60 == 0) // Only print once per second
             {
                 Debug.Log($"Boid {name}: Alignment={alignmentNeighbors?.Count ?? 0}, Cohesion={cohesionNeighbors?.Count ?? 0}, Separation={separationNeighbors?.Count ?? 0}");
+            }*/
+        }
+        
+        var biggerFish = new List<Boid>();
+        var sameSizeFish = new List<Boid>();
+        var smallerFish = new List<Boid>();
+
+        foreach (var neighbor in manager.Boids)
+        {
+            if (neighbor == this) continue;
+            if (neighbor.size > size + sizeThreshold)
+                biggerFish.Add(neighbor);
+            else if (Mathf.Abs(neighbor.size - size) <= sizeThreshold)
+                sameSizeFish.Add(neighbor);
+            else if (neighbor.size < size - sizeThreshold)
+                smallerFish.Add(neighbor);
+        }
+        
+        
+        // Flee from bigger fish
+        Vector3 flee = Vector3.zero;
+        foreach (var big in biggerFish)
+            flee += (Position - big.Position).normalized;
+        if (flee != Vector3.zero)
+            flee = flee.normalized * maxSpeed - velocity;
+        
+        Vector3 sameSizeCohesion = Vector3.zero;
+        if (sameSizeFish.Count > 0)
+        {
+            Vector3 center = Vector3.zero;
+            foreach (var same in sameSizeFish)
+                center += same.Position;
+            center /= sameSizeFish.Count;
+            sameSizeCohesion = (center - Position).normalized * maxSpeed - velocity;
+        }
+        
+        Vector3 hunt = Vector3.zero;
+        if (smallerFish.Count > 0)
+        {
+            Boid closest = smallerFish[0];
+            float minDist = (closest.Position - Position).sqrMagnitude;
+            foreach (var small in smallerFish)
+            {
+                float dist = (small.Position - Position).sqrMagnitude;
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    closest = small;
+                }
             }
+            hunt = (closest.Position - Position).normalized * maxSpeed - velocity;
         }
         
         // Calculate and apply boid behaviors
@@ -69,11 +128,14 @@ public class Boid : MonoBehaviour
         Vector3 separation = CalculateSeparation() * separationWeight;
         
         // Debug: Print forces (comment out after debugging)
-        if (Time.frameCount % 60 == 0)
+        /*if (Time.frameCount % 60 == 0)
         {
             Debug.Log($"Forces - A:{alignment.magnitude:F2}, C:{cohesion.magnitude:F2}, S:{separation.magnitude:F2}, Vel:{velocity.magnitude:F2}");
-        }
+        }*/
         
+        ApplyForce(flee * fleeWeight);
+        ApplyForce(sameSizeCohesion * sameSizeCohesionWeight);
+        ApplyForce(hunt * huntWeight);
         ApplyForce(alignment);
         ApplyForce(cohesion);
         ApplyForce(separation);
@@ -84,6 +146,9 @@ public class Boid : MonoBehaviour
 
     void UpdateMovement()
     {
+        
+        acceleration.y = Mathf.Clamp(acceleration.y, -maxPitch, maxPitch);
+        
         // Update velocity based on acceleration
         velocity += acceleration * Time.deltaTime;
         
@@ -96,11 +161,15 @@ public class Boid : MonoBehaviour
         // Update position based on velocity
         transform.position += velocity * Time.deltaTime;
         
-        // Rotate to face direction of movement
-        if (velocity.magnitude > 0.1f)
+        // Rotate to face direction of acceleration (if significant), else velocity
+        Vector3 direction = acceleration.magnitude > 0.1f ? acceleration.normalized : velocity.normalized;
+        if (direction.magnitude > 0.1f)
         {
-            transform.forward = velocity.normalized;
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            float rotationSpeed = 5f;
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
+
         
         // Reset acceleration for next frame
         acceleration = Vector3.zero;
