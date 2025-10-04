@@ -3,40 +3,60 @@ using UnityEngine;
 
 public class BoidManager : MonoBehaviour
 {
-   
-    public static BoidManager Instance;
 
-    public List<BoidAgent> AllAgents { get; private set; } = new List<BoidAgent>();
-    
-    [SerializeField] private float neighborRadius = 5f;
+    public static BoidManager Instance;
+    public int boidCount = 20;
+
+    private List<Boid> boids = new List<Boid>();
+
+    public List<Boid> Boids => boids;
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-    }
-    
-    public void RegisterAgent(BoidAgent agent)
-    {
-        AllAgents.Add(agent);
-    }
-    
-    public void UnregisterAgent(BoidAgent agent)
-    {
-        AllAgents.Remove(agent);
-    }
-    
-    public List<BoidAgent> GetNeighbors()
-    {
-        List<BoidAgent> neighbors = new List<BoidAgent>();
-        foreach (var agent in Instance.AllAgents)
+        if (Instance == null)
         {
-            if (agent == this) continue;
-            if (Vector3.Distance(transform.position, agent.transform.position) <= neighborRadius)
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void RegisterAgent(Boid agent)
+    {
+        if (!boids.Contains(agent))
+        {
+            boids.Add(agent);
+        }
+    }
+
+    public void UnregisterAgent(Boid agent)
+    {
+        boids.Remove(agent);
+    }
+
+    // Get all boids within a certain radius of the given agent
+    public List<Boid> GetNeighbors(Boid agent, float radius)
+    {
+        List<Boid> neighbors = new List<Boid>();
+        float sqrRadius = radius * radius; // Use squared distance to avoid expensive sqrt
+        
+        foreach (var other in boids)
+        {
+            if (other == agent) continue; // Skip self
+            
+            float sqrDistance = (other.transform.position - agent.transform.position).sqrMagnitude;
+            if (sqrDistance <= sqrRadius)
             {
-                neighbors.Add(agent);
+                neighbors.Add(other);
             }
         }
+        
         return neighbors;
     }
+    
+    
+    
+    
 }
