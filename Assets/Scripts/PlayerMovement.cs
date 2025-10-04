@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
         // Increase or decrease velocity forward based on input
         if (moveForward)
         {
-            transform.localScale += Vector3.forward * Time.deltaTime;
             if (currentForwardVelocity < maxForwardVelocity)
             {
                 currentForwardVelocity += (maxForwardVelocity / timeToReachMaxVelocity) * Time.deltaTime;
