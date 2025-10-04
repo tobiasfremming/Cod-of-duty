@@ -34,7 +34,7 @@ Material:
     RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _Metallic _MetallicGlossMap
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
