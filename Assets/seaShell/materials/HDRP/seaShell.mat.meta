@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8776b679a91a8f64e96bf81216c1c3b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208785
+  packageName: 3D Seashell
+  packageVersion: 1.0
+  assetPath: Assets/seaShell/materials/HDRP/seaShell.mat
+  uploadId: 476859

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 600526ac35c01794d9e0d806bb0ab55f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208785
+  packageName: 3D Seashell
+  packageVersion: 1.0
+  assetPath: Assets/seaShell/prefabs/HDRP/seaShell.prefab
+  uploadId: 476859

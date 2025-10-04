@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 88b8c9945dccda04ea2a48bc9b4d5afe
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327058
+  packageName: Fog Presets (Fake Fog)
+  packageVersion: 1.0
+  assetPath: Assets/Cody Dreams/Fake Fog Presets/FogSettings.asset
+  uploadId: 774725
