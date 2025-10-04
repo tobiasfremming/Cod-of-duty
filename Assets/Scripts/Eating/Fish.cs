@@ -4,11 +4,12 @@ public class Fish : EatableEntity, IEater
 {
 
 	[SerializeField] private float growthRate = 1.5f;
+	[SerializeField] private float eatSizeThreshold = 1.2f;
  	[SerializeField] private Collider eatCollider;
  	   
 	public override bool CanBeEatenBy(IEater eater)
     {
-        return eater.Size > this.Size * 1.2f;
+        return eater.Size > this.Size * eatSizeThreshold;
     }
 
     public bool CanEat(IEatable target)
