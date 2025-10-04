@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6791745999613027198}
   - component: {fileID: 8545033134582749748}
   - component: {fileID: 5166671650013085344}
-  - component: {fileID: 278763101160797156}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -87,33 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &278763101160797156
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2375383266988617797}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6735913478095112348
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6210768666302108198}
   - component: {fileID: 1689006196825671441}
+  - component: {fileID: 5192932393370152435}
   m_Layer: 0
   m_Name: salmon
   m_TagString: Untagged
@@ -160,3 +133,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishMaterial: {fileID: 2100000, guid: 0842ea1f856977e41ba2b1738e989c05, type: 2}
+--- !u!136 &5192932393370152435
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735913478095112348}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.46
+  m_Height: 8
+  m_Direction: 0
+  m_Center: {x: 1.58, y: 0, z: 0}
