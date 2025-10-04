@@ -1,7 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Device;
-using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,14 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
 
     // Variables for rotating player model
-    public float rotationSpeed = 5f;
-    
-    // Variables for moving forward
-    public float maxForwardVelocity = 2f;
-    public float timeToReachMaxVelocity = 2f;
-    private float currentForwardVelocity = 0f;
+    [SerializeField] private float rotationSpeed = 5f;
 
-    InputAction moveForwardAction;
+    // Variables for moving forward
+    [SerializeField] private float maxForwardVelocity = 2f;
+    [SerializeField] private float timeToReachMaxVelocity = 2f;
+    private float currentForwardVelocity = 0f;
+    private InputAction moveForwardAction;
+
     void Start()
     {
         moveForwardAction = InputSystem.actions.FindAction("MoveForward");
@@ -24,26 +25,50 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        
+    }
+    float NormalizeAngle(float angle)
+    {
+        if (angle > 180f) angle -= 360f;
+        return angle;
+    }
+
+    private void FixedUpdate()
+
+    {
         // Mouse position in screen space with depth
         Vector3 screenPoint = Input.mousePosition;
-        screenPoint.z = 10f;
+        screenPoint.z = transform.localScale.x*2 + 30;
 
         // Convert to world space
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(screenPoint);
 
         // Direction from object to mouse world position
         Vector3 direction = mouseWorldPos - transform.position;
+        if (direction.sqrMagnitude < 0.001f) return;
 
-        if (direction.sqrMagnitude > 0.001f)
+        // Rotate towards mouse world position
+        Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+
+        // Clamp to avoid weird spinning
+        Vector3 euler = targetRotation.eulerAngles;
+        euler.x = NormalizeAngle(euler.x);
+        euler.x = Mathf.Clamp(euler.x, -45f, 45f); // Setting this any higher will make the controls wonky
+        targetRotation = Quaternion.Euler(euler);
+        
+        float distance = direction.magnitude;
+        if (distance > 0.2f)
         {
-            // Rotate towards mouse world position
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
         }
-    }
+            
 
-    private void FixedUpdate()
-    {
+
+
         // Check if we should be moving forward
         bool moveForward = moveForwardAction.ReadValue<float>() > 0 ? true : false;
 
