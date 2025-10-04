@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerFollower : MonoBehaviour
 {
-    public GameObject playerObject;
+    public Transform playerTransform;
 
     [SerializeField] private float smoothTime = 0.3F;
     [SerializeField] private Vector3 positionOffset = new Vector3(0, 2, -5);
@@ -14,17 +14,19 @@ public class PlayerFollower : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 targetEuler = playerObject.transform.rotation.eulerAngles;
+        Vector3 targetEuler = playerTransform.rotation.eulerAngles;
 
         // Rotate camera in same direction as playerObject
         transform.rotation = Quaternion.Slerp(
             transform.rotation,
-            playerObject.transform.rotation * Quaternion.Euler(rotationOffset),
+            playerTransform.rotation * Quaternion.Euler(rotationOffset),
             Time.deltaTime * (1f / smoothTime)
         );
 
         // Move camera behind playerObject
-        Vector3 targetPosition = playerObject.transform.TransformPoint(positionOffset);
+        Vector3 targetPosition = playerTransform.position;
+        targetPosition += playerTransform.rotation * (positionOffset * playerTransform.localScale.z/2); // Required some tweaking with /2 to get a good feel
+        targetPosition += playerTransform.rotation * (positionOffset * playerTransform.localScale.y/4); // Rquired some tweaking with /4 to get a good feel
 
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime);
     }
