@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a8e0bad3e0628584493715c991762a9f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201914
+  packageName: Ancient Ruins and Plants
+  packageVersion: 1.0
+  assetPath: Assets/AncientRuins/TextureMaterials/M_AncientRuins_Props.mat
+  uploadId: 449917

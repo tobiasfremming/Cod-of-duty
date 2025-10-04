@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ef51b96712bac25449cd9721661dc73c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201914
+  packageName: Ancient Ruins and Plants
+  packageVersion: 1.0
+  assetPath: Assets/AncientRuins/TextureMaterials/M_AncientRuins_Rocks.mat
+  uploadId: 449917
