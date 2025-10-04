@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5e64bae92d2cc5043b2ef988d1747f6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - targetRenderer: {instanceID: 0}
+  - baseMaterial: {fileID: 2100000, guid: 865561ec622d11f478cb793e4f31669e, type: 2}
+  - albedo: {instanceID: 0}
+  - normalMap: {fileID: 2800000, guid: cfecdd8a7a218524a9c27841b9230134, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
