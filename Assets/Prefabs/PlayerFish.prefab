@@ -13,7 +13,10 @@ GameObject:
   - component: {fileID: 3172858605731260357}
   - component: {fileID: 6754053053872538434}
   - component: {fileID: 2360440811663190715}
+  - component: {fileID: 346771380354247096}
   - component: {fileID: 8683057536290216850}
+  - component: {fileID: 7319148596161582090}
+  - component: {fileID: 6909568576946704110}
   m_Layer: 0
   m_Name: PlayerFish
   m_TagString: Untagged
@@ -137,6 +140,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &346771380354247096
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813669654068656545}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8683057536290216850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +178,34 @@ MonoBehaviour:
   rotationSpeed: 10
   maxForwardVelocity: 7
   timeToReachMaxVelocity: 2
+--- !u!114 &7319148596161582090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813669654068656545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c2fffd7b4175e4099d7b8af5d88c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nutritionValue: 10
+  size: 1
+  growthRate: 1.5
+  eatSizeThreshold: 1.2
+  eatCollider: {fileID: 346771380354247096}
+--- !u!114 &6909568576946704110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813669654068656545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca6dd84973a9cf4e85a643205ce71f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHunger: 100
+  hungerDecreaseRate: 1
