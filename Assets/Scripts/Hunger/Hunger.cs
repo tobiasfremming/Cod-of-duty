@@ -1,14 +1,12 @@
-
-
 using UnityEngine;
 
 
 public class Hunger : MonoBehaviour
 {
     [SerializeField] private float initialHunger = 100f;
-    private float maxHunger = 100f;
-
     [SerializeField] private float hungerDecreaseRate = 1f;
+
+    private float maxHunger;
     private float currentHunger;
    
     void Start()
@@ -45,6 +43,11 @@ public class Hunger : MonoBehaviour
     public float GetHunger()
     {
         return currentHunger;
+    }
+    
+    public float GetMaxHunger()
+    {
+        return maxHunger;
     }
 
     private void Starved()

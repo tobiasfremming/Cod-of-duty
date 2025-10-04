@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca6dd84973a9cf4e85a643205ce71f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHunger: 100
+  initialHunger: 20
   hungerDecreaseRate: 1
 --- !u!65 &1668253529
 BoxCollider:
