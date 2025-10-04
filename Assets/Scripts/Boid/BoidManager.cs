@@ -9,8 +9,11 @@ public class BoidManager : MonoBehaviour
     [Header("Spawning")]
     public GameObject boidPrefab;
     public int boidCount = 20;
-    public float spawnRadius = 10f;
     public bool spawnOnStart = true;
+    public Vector3 spawnArea = new Vector3(10, 5, 10); // Size of spawn box
+    public bool randomRotation = true;
+    public bool randomScale = false;
+    public Vector2 scaleRange = new Vector2(1f, 2f);
 
     private List<Boid> boids = new List<Boid>();
 
@@ -40,9 +43,27 @@ public class BoidManager : MonoBehaviour
     {
         for (int i = 0; i < boidCount; i++)
         {
-            Vector3 randomPos = transform.position + Random.insideUnitSphere * spawnRadius;
-            GameObject boidObj = Instantiate(boidPrefab, randomPos, Quaternion.identity);
-            boidObj.name = $"Boid_{i}";
+            Vector3 randomPos = transform.position + new Vector3(
+                Random.Range(-spawnArea.x / 2, spawnArea.x / 2),
+                Random.Range(-spawnArea.y / 2, spawnArea.y / 2),
+                Random.Range(-spawnArea.z / 2, spawnArea.z / 2)
+            );
+
+            Quaternion rotation = randomRotation ? Random.rotation : Quaternion.identity;
+
+            GameObject obj = Instantiate(boidPrefab, randomPos, rotation);
+
+            if (randomScale)
+            {
+                float scale = Random.Range(scaleRange.x, scaleRange.y);
+                obj.transform.localScale = Vector3.one * scale;
+                
+                var creature = obj.GetComponent<EatableEntity>();
+                if (creature != null)
+                {
+                    creature.SetSize(scale);
+                }
+            }
         }
         
         Debug.Log($"Spawned {boidCount} boids");
