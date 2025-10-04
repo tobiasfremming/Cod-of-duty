@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nutritionValue: 10
   size: 1
-  growthRate: 1.5
+  growthRate: 0.1
   eatSizeThreshold: 1.2
   eatCollider: {fileID: 346771380354247096}
 --- !u!114 &6909568576946704110

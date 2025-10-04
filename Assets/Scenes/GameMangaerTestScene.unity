@@ -253,12 +253,12 @@ GameObject:
   - component: {fileID: 400057380}
   - component: {fileID: 400057379}
   m_Layer: 5
-  m_Name: UI
+  m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &400057379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1483679803}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 837087426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -644,10 +644,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7319148596161582090, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
-      propertyPath: growthRate
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8683057536290216850, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: cam
       value: 
@@ -718,6 +714,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighborRadius: 5
+--- !u!1 &837087425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837087426}
+  - component: {fileID: 837087427}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &837087426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837087425}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 400057382}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837087427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837087425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cc2194f1022f94b82cb1efa712e4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenUI: {fileID: 400057378}
 --- !u!1 &893709931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1483679803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1718,7 +1760,7 @@ RectTransform:
   m_Father: {fileID: 621295262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 4.1456, y: 0}
   m_SizeDelta: {x: -18.2912, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1812,10 +1854,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 896315382925178025, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2682029826836490973, guid: 5bc20017eef13da488ce7c2f72908ab0, type: 3}
       propertyPath: m_Name
       value: Fish
@@ -1872,7 +1910,7 @@ SceneRoots:
   - {fileID: 1162949984}
   - {fileID: 229323683}
   - {fileID: 2101174860}
-  - {fileID: 400057382}
+  - {fileID: 837087426}
   - {fileID: 1806945429}
   - {fileID: 893709934}
   - {fileID: 6290130744485995698}
