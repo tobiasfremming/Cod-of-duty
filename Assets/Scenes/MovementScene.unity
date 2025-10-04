@@ -519,6 +519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFish
       objectReference: {fileID: 0}
+    - target: {fileID: 1325545031538188338, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.98
@@ -533,31 +537,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99999183
+      value: 0.9998471
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00404073
+      value: -0.01622411
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.006533264
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.000016673523
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.463
+      value: -1.859
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 0.749
       objectReference: {fileID: 0}
     - target: {fileID: 4606662144917814981, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.014
       objectReference: {fileID: 0}
     - target: {fileID: 8683057536290216850, guid: 492c17783e18eaa4ead40d16c7a7806a, type: 3}
       propertyPath: cam
