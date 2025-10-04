@@ -5,7 +5,7 @@ public class Fish : EatableEntity, IEater
 {
 
 	[SerializeField] private float growthRate = 0.1f;
-	[SerializeField] private float eatSizeThreshold = 1.2f;
+	[SerializeField] private float eatSizeThreshold = 1.5f;
  	[SerializeField] private Collider eatCollider;
 
     private Hunger hunger;
