@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8a8f247ee091780489e02553ab51fa60
+timeCreated: 1515529832
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 109065
+  packageName: Altar Ruins Free
+  packageVersion: 2.0
+  assetPath: Assets/Altar_Ruins_FREE/Prefabs/Old/Entrance.prefab
+  uploadId: 707405

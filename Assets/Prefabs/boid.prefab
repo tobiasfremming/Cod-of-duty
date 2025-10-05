@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5065984623163044200}
   - component: {fileID: 1447559719517513864}
   - component: {fileID: 6052836525149485030}
+  - component: {fileID: -4238348423157988449}
   m_Layer: 0
   m_Name: boid
   m_TagString: Untagged
@@ -48,14 +49,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59ccab063b22146afb6714adc820c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weightClass: 1
+  baseScale: 0.5
+  scalePerWeightClass: 0.3
   maxSpeed: 5
   maxForce: 0.5
   alignmentRadius: 30
   cohesionRadius: 300
   separationRadius: 3
+  predatorDetectionRadius: 5
+  preyDetectionRadius: 10
   alignmentWeight: 1
   cohesionWeight: 1
   separationWeight: 1.5
+  fearWeight: 3
+  huntWeight: 2
 --- !u!114 &5065984623163044200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +80,9 @@ MonoBehaviour:
   size: 1
   growthRate: 0.1
   eatSizeThreshold: 1.2
+  maxSize: 10
   eatCollider: {fileID: 6052836525149485030}
+  scaleLerpSpeed: 5
 --- !u!54 &1447559719517513864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,6 +131,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 1.1}
+--- !u!114 &-4238348423157988449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097306741268288318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d1383b572966c439c1fe75d616dc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishMaterial: {fileID: 2100000, guid: 0842ea1f856977e41ba2b1738e989c05, type: 2}
+  velocityMultiplier: 1
 --- !u!1001 &7738321035469283476
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ Shader "Custom/FishAffineShader"
         _Amplitude ("Amplitude", Float) = 0.2
         _Frequency ("Frequency", Float) = 2.0
         _Speed ("Speed", Float) = 2.0
+        _VelocityScale ("Velocity Scale", Float) = 1.0
         
         [Header(Rotation)]
         _RotationX ("Rotation X (deg)", Float) = 0
@@ -66,6 +67,7 @@ Shader "Custom/FishAffineShader"
             float _Amplitude;
             float _Frequency;
             float _Speed;
+            float _VelocityScale;
             
             float _RotationX;
             float _RotationY;
@@ -184,9 +186,9 @@ Shader "Custom/FishAffineShader"
             v2f vert (appdata v)
             {
                 v2f o;
-                // Compute time-based sine wave
+                // Compute time-based sine wave, scaled by velocity
                 float t = _Time.y;
-                float wave = sin(v.vertex.x * _Frequency + t * _Speed);
+                float wave = sin(v.vertex.x * _Frequency + t * _Speed * _VelocityScale);
                 
                 // Translation along X axis (simulate swimming side to side)
                 float3 translation = float3(wave * _Amplitude, 0, 0);

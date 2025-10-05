@@ -11,13 +11,29 @@ public class HungerUI : MonoBehaviour
 
     private void Start()
     {
-        slider.maxValue = hunger.GetMaxHunger();
+        // Try to find Hunger component if not assigned
+        if (hunger == null)
+        {
+            hunger = FindObjectOfType<Hunger>();
+        }
+        
+        if (hunger != null && slider != null)
+        {
+            slider.maxValue = hunger.GetMaxHunger();
+        }
+        else
+        {
+            Debug.LogWarning("HungerUI: Missing Hunger or Slider component!");
+        }
     }
     
     private void Update()
     {
-        if (!hunger) return;
-        SetHunger(hunger.GetHunger());
+        // Only update if both hunger and slider are assigned
+        if (hunger != null && slider != null)
+        {
+            SetHunger(hunger.GetHunger());
+        }
     }
 
     public void SetHunger(float newHunger)
