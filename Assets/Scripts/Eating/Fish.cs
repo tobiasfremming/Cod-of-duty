@@ -44,6 +44,12 @@ public class Fish : EatableEntity, IEater
         targetScale = Vector3.one * size;
 		Debug.Log($"Fish grew to size: {size} (max: {maxSize})");
         target.OnEaten(this);
+
+        bool targetIsPlayer = target.gameObject.GetComponent<Hunger>() != null;
+        if (targetIsPlayer)
+        {
+	        GameStateManager.Instance.EndGame();
+        }
         
         if(!hunger) return;
         hunger.IncreaseHunger(target.NutritionValue);
