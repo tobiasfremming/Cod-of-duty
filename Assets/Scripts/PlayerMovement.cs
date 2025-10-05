@@ -14,13 +14,19 @@ public class PlayerMovement : MonoBehaviour
 
     // Variables for moving forward
     [SerializeField] private float maxForwardVelocity = 2f;
+    [SerializeField] private float acceleration = 5f;
     [SerializeField] private float timeToReachMaxVelocity = 2f;
     private float currentForwardVelocity = 0f;
     private InputAction moveForwardAction;
+    private InputAction accelerationAction;
+
+    private Hunger hunger;
 
     void Start()
     {
         moveForwardAction = InputSystem.actions.FindAction("MoveForward");
+        accelerationAction = InputSystem.actions.FindAction("Acceleration");
+        hunger = gameObject.GetComponent<Hunger>();
     }
 
     float NormalizeAngle(float angle)
@@ -30,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-
     {
         // Mouse position in screen space with depth
         Vector3 screenPoint = Input.mousePosition;
@@ -68,17 +73,36 @@ public class PlayerMovement : MonoBehaviour
 
         // Check if we should be moving forward
         bool moveForward = moveForwardAction.ReadValue<float>() > 0 ? true : false;
+        bool acceleration = accelerationAction.ReadValue<float>() > 0 ? true : false;
+
+        float maxVelocity = maxForwardVelocity;
+        float timeToMax = timeToReachMaxVelocity;
+
+        
+        if(acceleration)
+        {
+            maxVelocity += this.acceleration;
+            timeToMax = 1f;
+            if ( hunger != null)
+            {
+                hunger.IncreaseHungerDecreaseRate(5);
+            }
+        }
+        else
+        {
+            hunger.IncreaseHungerDecreaseRate(0);
+        }
 
         // Increase or decrease velocity forward based on input
         if (moveForward)
         {
-            if (currentForwardVelocity < maxForwardVelocity)
+            if (currentForwardVelocity < maxVelocity)
             {
-                currentForwardVelocity += (maxForwardVelocity / timeToReachMaxVelocity) * Time.deltaTime;
+                currentForwardVelocity += (maxVelocity / timeToMax) * Time.deltaTime;
             }
             else
             {
-                currentForwardVelocity = maxForwardVelocity;
+                currentForwardVelocity = maxVelocity;
             }
         }
         else
@@ -89,9 +113,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                currentForwardVelocity -= (maxForwardVelocity / timeToReachMaxVelocity) * Time.deltaTime;
+                currentForwardVelocity -= (maxVelocity / timeToMax) * Time.deltaTime;
             }
-
         }
 
         // Move forward with set velocity

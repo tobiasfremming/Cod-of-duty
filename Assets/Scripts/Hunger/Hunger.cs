@@ -5,7 +5,8 @@ using UnityEngine;
 public class Hunger : MonoBehaviour
 {
     [SerializeField] private float initialHunger = 100f;
-    [SerializeField] private float hungerDecreaseRate = 1f;
+    [SerializeField] private float initialHungerDecreaseRate = 1f;
+    private float hungerDecreaseRate;
 
     private float maxHunger;
     private float currentHunger;
@@ -15,6 +16,7 @@ public class Hunger : MonoBehaviour
         GameStateManager.Instance.OnRestartGame += GameStateManager_OnRestartGame;
         maxHunger = initialHunger;
         currentHunger = initialHunger;
+        hungerDecreaseRate = initialHungerDecreaseRate;
     }
 
     void Update()
@@ -40,6 +42,11 @@ public class Hunger : MonoBehaviour
     {
         maxHunger += amount;
         currentHunger += amount;
+    }
+    
+    public void IncreaseHungerDecreaseRate(float amount)
+    {
+        hungerDecreaseRate = initialHungerDecreaseRate + amount;
     }
     
     public float GetHunger()
