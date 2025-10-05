@@ -6,6 +6,7 @@ public class Fish : EatableEntity, IEater
 
 	[SerializeField] private float growthRate = 0.1f;
 	[SerializeField] private float eatSizeThreshold = 1.5f;
+	[SerializeField] private float maxSize = 10f; // Maximum size the fish can grow to
  	[SerializeField] private Collider eatCollider;
     
     [SerializeField] private float scaleLerpSpeed = 5f;
@@ -39,8 +40,9 @@ public class Fish : EatableEntity, IEater
         if (!CanEat(target)) return;
 		
         size += (target.NutritionValue * growthRate);
+        size = Mathf.Min(size, maxSize); // Cap the size at maxSize
         targetScale = Vector3.one * size;
-		Debug.Log($"Fish grew to size: {size}");
+		Debug.Log($"Fish grew to size: {size} (max: {maxSize})");
         target.OnEaten(this);
         
         if(!hunger) return;

@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600d8c6eb99c68145808fc241f66dbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 566150484}
+  playerTransform: {fileID: 566150489}
   smoothTime: 0.3
   positionOffset: {x: 0, y: 2, z: -5}
   rotationOffset: {x: 0, y: 0, z: 0}
@@ -497,12 +497,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidPrefab: {fileID: 5097306741268288318, guid: c564d5fb09e2b1f4a9244fffc3d37a7e, type: 3}
-  boidCount: 10
+  boidCount: 500
   spawnOnStart: 1
-  spawnArea: {x: 20, y: 10, z: 20}
   randomRotation: 1
   randomScale: 1
   scaleRange: {x: 0.5, y: 2}
+  boundaryCenter: {x: 0, y: 50, z: 0}
+  boundarySize: {x: 700, y: 100, z: 700}
+  boundaryTurnForce: 5
+  boundaryColor: {r: 0, g: 1, b: 1, a: 0.3}
+  showBoundaryGizmo: 1
 --- !u!4 &264899686
 Transform:
   m_ObjectHideFlags: 0
@@ -585,15 +589,15 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 220856206184139653, guid: 23ea386820bf4d14fbd75d21cf72ed19, type: 3}
   m_PrefabInstance: {fileID: 566150482}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566150484}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ca6dd84973a9cf4e85a643205ce71f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &566150484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3500611297102564778, guid: 23ea386820bf4d14fbd75d21cf72ed19, type: 3}
+--- !u!4 &566150489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 948614082427873303, guid: 23ea386820bf4d14fbd75d21cf72ed19, type: 3}
   m_PrefabInstance: {fileID: 566150482}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &843551286
