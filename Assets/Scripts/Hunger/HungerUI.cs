@@ -16,6 +16,7 @@ public class HungerUI : MonoBehaviour
     
     private void Update()
     {
+        if (!hunger) return;
         SetHunger(hunger.GetHunger());
     }
 
