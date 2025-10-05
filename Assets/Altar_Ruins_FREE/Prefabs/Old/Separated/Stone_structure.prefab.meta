@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bb145e98bc64e154d9b9319e2c54a3aa
+timeCreated: 1527625970
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 109065
+  packageName: Altar Ruins Free
+  packageVersion: 2.0
+  assetPath: Assets/Altar_Ruins_FREE/Prefabs/Old/Separated/Stone_structure.prefab
+  uploadId: 707405

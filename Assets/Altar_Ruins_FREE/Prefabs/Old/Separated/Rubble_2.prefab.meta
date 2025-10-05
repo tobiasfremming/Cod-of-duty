@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 117b5c0d21e9e1e4ca25ebe32db7fc6d
+timeCreated: 1527625924
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 109065
+  packageName: Altar Ruins Free
+  packageVersion: 2.0
+  assetPath: Assets/Altar_Ruins_FREE/Prefabs/Old/Separated/Rubble_2.prefab
+  uploadId: 707405

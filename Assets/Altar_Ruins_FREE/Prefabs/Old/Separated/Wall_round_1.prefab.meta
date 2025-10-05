@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: fef3c26101f51114eb2b725edeb66a2f
+timeCreated: 1527625979
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 109065
+  packageName: Altar Ruins Free
+  packageVersion: 2.0
+  assetPath: Assets/Altar_Ruins_FREE/Prefabs/Old/Separated/Wall_round_1.prefab
+  uploadId: 707405
