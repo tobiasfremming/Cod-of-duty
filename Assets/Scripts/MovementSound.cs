@@ -56,7 +56,6 @@ public class MovementSound : MonoBehaviour
     private AudioClip lastAudioClip;
     AudioClip chooseRandomSound()
     {
-        print(audioClips.Length);
         AudioClip clip = audioClips[Random.Range(0, audioClips.Length - 1)];
         if (clip == lastAudioClip)
         {
