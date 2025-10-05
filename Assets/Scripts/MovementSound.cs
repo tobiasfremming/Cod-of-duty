@@ -24,6 +24,7 @@ public class MovementSound : MonoBehaviour
             {
                 print(shouldStopPlaying);
                 CallAudio();
+                audioSource.Play();
             }
         }
         if (moveForwardAction.WasReleasedThisFrame())

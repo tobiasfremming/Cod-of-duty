@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bc6c1d5e5c5a674468468764b69b1ace
+timeCreated: 1515529962
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 109065
+  packageName: Altar Ruins Free
+  packageVersion: 2.0
+  assetPath: Assets/Altar_Ruins_FREE/Sky.mat
+  uploadId: 707405
