@@ -502,11 +502,12 @@ MonoBehaviour:
   randomRotation: 1
   randomScale: 1
   scaleRange: {x: 0.5, y: 2}
-  boundaryCenter: {x: 0, y: 50, z: 0}
-  boundarySize: {x: 700, y: 100, z: 700}
+  boundaryCenter: {x: 0, y: 30, z: 0}
+  boundarySize: {x: 700, y: 50, z: 700}
   boundaryTurnForce: 5
   boundaryColor: {r: 0, g: 1, b: 1, a: 0.3}
   showBoundaryGizmo: 1
+  playerFish: {fileID: 0}
 --- !u!4 &264899686
 Transform:
   m_ObjectHideFlags: 0
