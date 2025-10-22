@@ -14,15 +14,15 @@ public class Boid : MonoBehaviour
     [Header("Perception Radii")]
     public float alignmentRadius = 15f;
     public float cohesionRadius = 50f;
-    public float separationRadius = 1f;
-    public float predatorDetectionRadius = 5f;
+    public float separationRadius = 4f;
+    public float predatorDetectionRadius = 10f;
     public float preyDetectionRadius = 10f;
     
     [Header("Behavior Weights")]
     [Range(0f, 5f)] public float alignmentWeight = 1.0f;
     [Range(0f, 5f)] public float cohesionWeight = 1.0f;
     [Range(0f, 5f)] public float separationWeight = 1.5f;
-    [Range(0f, 10f)] public float fearWeight = 3.0f;
+    [Range(0f, 10f)] public float fearWeight = 10.0f;
     [Range(0f, 5f)] public float huntWeight = 2.0f;
     
     private BoidManager manager;
