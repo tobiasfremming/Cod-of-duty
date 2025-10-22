@@ -47,8 +47,15 @@ public class GameStateManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SetGameState(GameState.GamePlaying);
-        OnRestartGame?.Invoke();
+        if (SceneSwitcher.Instance)
+        {
+            SceneSwitcher.Instance.RestartCurrentScene();
+        }
+        else
+        {
+            SetGameState(GameState.GamePlaying);
+            OnRestartGame?.Invoke();
+        }
     }
     
     public GameState GetGameState()
