@@ -79,18 +79,6 @@ The `FishAffineShader.shader` is a custom shader that animates fish tails mathem
 - **Sine Wave Animation**: Tail movement is calculated using sine waves for smooth, realistic motion.
 - **Velocity Scaling**: The shader dynamically adjusts animation speed based on the fish's velocity, controlled by the `FishShaderController.cs`.
 
----
 
-## Known Issues
-- **Boid Behavior**: Occasionally, fish may not react properly to neighbors due to perception radius settings.
-- **Boundary System**: Fish may sometimes approach the edges too closely before turning back.
-
----
-
-## Credits
-- **Developer**: [Your Name]
-- **Special Thanks**: Unity community for boid system inspiration and shader tutorials.
-
----
 
 Dive into the underwater world of **Cod of Duty** and experience the life of a fish in a dynamic ecosystem! 🐟
